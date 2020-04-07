@@ -9,6 +9,7 @@ import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import jpabook.jpashop.repository.MemberRepository;
 import jpabook.jpashop.repository.OrderRepository;
+import jpabook.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +28,7 @@ public class OrderService {
     /**
      * 주문
      */
+    @Transactional
     public Long order(Long memberId, Long itemId, int count) {
 
         //엔티티 조회
@@ -60,10 +62,12 @@ public class OrderService {
     }
     /**
      * 검색
+     *
+     * 이렇게 단순 조회하는 기능에 단순히 위임만 해줄때는 controller->repository에 접근하게 하는게 좋다
      */
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
 
 
 
