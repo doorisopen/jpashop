@@ -16,4 +16,4 @@ SpringBoot & JPA를 활용한 쇼핑몰 프로젝트
   + [x] 주문
 * [x] 회원 등록 API
 * [x] 회원 수정 API
-* [ ] 회원 조회 API
+* [x] 회원 조회 API
