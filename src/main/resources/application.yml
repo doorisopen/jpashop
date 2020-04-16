@@ -8,7 +8,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none # create 는 애플리케이션 실행때마다 drop & create 한다 / none 은 drop 하지 않고 데이터가 남아있는다.
+      ddl-auto: create # create 는 애플리케이션 실행때마다 drop & create 한다 / none 은 drop 하지 않고 데이터가 남아있는다.
     properties:
       hibernate:
 #        show_sql: true : System.out 에 의해서 출력
