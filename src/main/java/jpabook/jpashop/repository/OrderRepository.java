@@ -1,5 +1,6 @@
 package jpabook.jpashop.repository;
 
+import jpabook.jpashop.api.OrderSimpleApiController;
 import jpabook.jpashop.domain.Order;
 import lombok.RequiredArgsConstructor;
 import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
@@ -59,8 +60,11 @@ public class OrderRepository {
         return query.getResultList();
     }
 
-//    public List<Order> findAll(OrderSearch orderSearch) {
-//        QOrder order = QOrder.order;
-//        QMember member = QMember.member;
-//    }
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+    }
 }
