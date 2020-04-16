@@ -1,9 +1,8 @@
 package jpabook.jpashop.repository;
 
-import jpabook.jpashop.api.OrderSimpleApiController;
 import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryDto;
 import lombok.RequiredArgsConstructor;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
@@ -67,4 +66,5 @@ public class OrderRepository {
                         " join fetch o.delivery d", Order.class
         ).getResultList();
     }
+
 }
