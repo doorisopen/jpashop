@@ -55,14 +55,18 @@ public class OrderApiController {
         return result;
     }
 
-    @GetMapping("/api/v3/orders")
-    public List<OrderDto> ordersV3() {
-        List<Order> orders = orderRepository.findAllWithItem();
+    private final OrderQueryService orderQueryService;
 
-        List<OrderDto> result = orders.stream()
-                .map(o -> new OrderDto(o))
-                .collect(Collectors.toList());
-        return result;
+    @GetMapping("/api/v3/orders")
+    public List<jpabook.jpashop.service.query.OrderDto> ordersV3() {
+//        List<Order> orders = orderRepository.findAllWithItem();
+//
+//        List<OrderDto> result = orders.stream()
+//                .map(o -> new OrderDto(o))
+//                .collect(toList());
+//        return result;
+
+        return orderQueryService.ordersV3(); // OSIV 설정 false 할때 해결방법법
     }
     @GetMapping("/api/v3.1/orders")
     public List<OrderDto> ordersV3_page(
