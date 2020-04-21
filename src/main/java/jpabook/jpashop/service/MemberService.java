@@ -42,13 +42,14 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    // Spring Data Jpa: findByOne -> findById 로 바뀜
     public Member findOne(Long memberId) {
-        return memberRepository.findOne(memberId);
+        return memberRepository.findById(memberId).get();
     }
 
     @Transactional
     public void update(Long id, String name) {
-        Member member = memberRepository.findOne(id);
+        Member member = memberRepository.findById(id).get();
         member.setName(name);
     }
 }
