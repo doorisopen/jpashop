@@ -1,5 +1,14 @@
 # jpashop
-SpringBoot & JPA를 활용한 쇼핑몰 프로젝트
+SpringBoot & JPA를 활용한 웹 애플리케이션 개발
+
+## Project
+* Spring Boot(2.x)
+* Gradle
+* Jpa
+* H2
+* lombok
+* REST API
+* thymeleaf
 
 ## Todo
 * [x] 도메인 설계
