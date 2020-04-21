@@ -14,7 +14,7 @@ spring:
 #        show_sql: true : System.out 에 의해서 출력
         format_sql: true
         default_batch_fetch_size: 100 # V3.1 DTO->Paging 처리, !!=이 옵션은 항시 활성화 추천=!!
-    open-in-view: false
+    open-in-view: true
 
 logging:
   level:
